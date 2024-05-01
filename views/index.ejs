@@ -1,0 +1,281 @@
+ 
+ 
+<div class="container-fluid" id="bgimage">
+
+  <div class="row text-center py-4 display-3 fw-bold orange">
+    <div class="col-12">
+      <div><span id="element"></span></div>
+      
+      
+    </div>
+    </div>
+
+  
+  
+  
+  
+
+  <div class="row text-center py-4 display-3 fw-bold">
+    <div class="col-12">
+      no matter how you cook,<br> <span class="orange">Food Rescue  </span>has many <br>recipes
+    </div>
+    </div>
+
+
+  <div class="row text-center py-4">
+  <div class="col-12 display-5">
+    "There is no sincere love than the love of food." <br> - George Bernard Shaw
+  </div>
+ </div>
+
+
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center py-4">
+    <a href="/explore-latest" class="btn btn1 btn-lg px-4 me-md-2">Explore Latest</a>
+    <a href="/explore-random" class="btn btn1  btn-lg px-4 me-md-2">Explore Random</a>
+  </div>
+
+</div>
+
+<!-- Who we are section  start-->
+
+
+
+<div class="container">
+  <div class="row px-sm-4 py-4 mt-4 align-items-center"> <!-- Added align-items-center class -->
+    <div class="col-md-5 col-sm-12 text-center" data-aos="fade-up" data-aos-once="true"> <!-- Removed mt-4 class -->
+      <img src="img/Cookingpic.jpg" alt="" style="width: 100%; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="col-md-7 col-sm-12 py-4" data-aos="fade-left" data-aos-once="true">
+      <div class="row my-3">
+        <div class="col">
+          <h2 class="orange">WHO WE ARE</h2>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <p class="display-3 fw-bold">One thousand flavors in one place.</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <p>we're on a mission to celebrate the diversity of flavors and cultures through our food recipe blog. Our goal is to inspire culinary creativity and bring people together through the joy of cooking and sharing delicious meals. With a focus on authenticity and innovation, we aim to empower home chefs of all skill levels to explore new tastes, techniques, and traditions.</p><p> Join us as we embark on a flavorful journey, one recipe at a time. Welcome to a world of endless culinary inspiration!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+<!-- who we are section end -->
+
+
+
+
+<!-- Categories Start -->
+
+
+
+<!-- Categories End -->
+
+
+
+<!-- Latest Start -->
+<div class="container-xxl">
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center justify-content-between">
+    <h2 class="fw-bold" data-aos="fade-right" data-aos-once="true">Latest Recipes</h2>
+    <a href="/explore-latest" class="btn btn1" data-aos-once="true" data-aos="fade-left">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" data-aos="slide-left" data-aos-once="true">
+
+    <% if(food != '') { %>
+      <% food.latest.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+
+</section>
+<!-- Latest End -->
+
+<!-- Thai Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center justify-content-between" >
+    <h2 class="fw-bold" data-aos="fade-right" data-aos-once="true">Thai Recipes</h2>
+    <a href="/categories/Thai" class="btn btn1" data-aos="fade-left" data-aos-once="true">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" data-aos="slide-right" data-aos-once="true">
+    <% if(typeof food.thai !== 'undefined' && food.thai.length > 0) { %>
+      <% food.thai.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- Thai End -->
+
+<!-- American Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center justify-content-between">
+    <h2 class="fw-bold" data-aos="fade-right" data-aos-once="true">American Recipes</h2>
+    <a href="/categories/Thai" class="btn btn1" data-aos="fade-left" data-aos-once="true">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" data-aos="slide-left" data-aos-once="true">
+    <% if(food.american != '') { %>
+      <% food.american.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- American End -->
+
+<!-- Chinese Recipes -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center justify-content-between">
+    <h2 class="fw-bold" data-aos="fade-right" data-aos-once="true">Chinese Recipes</h2>
+    <a href="/categories/Thai" class="btn btn1" data-aos="fade-left" data-aos-once="true">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" data-aos="slide-right" data-aos-once="true">
+    <% if(food.chinese != '') { %>
+      <% food.chinese.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- American End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex mb-2 align-items-center mt-5">
+  <h2 class="fw-bold" data-aos="fade-right" data-aos-once="true">Popular Categories</h2>
+</div>
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3" data-aos="slide-left" data-aos-once="true">
+  <% if(categories != '') { %>
+    <% categories.forEach(function(category, index) { %>
+      <a href="/categories/<%- category.name %>" class="col text-center category__link" >
+        <div class="category__img shadow" style="border-radius: 20px">
+          <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+  <a href="/categories" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="img/view-all.jpg" alt="View All Categories" loading="lazy">
+    </div>
+    <div class="pt-1">View All</div>
+  </a>
+
+</div>
+
+
+
+<!-- Submit - Start -->
+<section class="px-4 py-5 my-5 text-center">
+  <img src="/img/publish-recipe.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566" height="208" loading="lazy">
+  <h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-once="true">Publish your recipe for FREE today</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4" data-aos="fade-up" data-aos-once="true">Publish your Recipe in front of thousands of people for free.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg" data-aos="fade-up" data-aos-once="true">Submit Recipe</a>
+    </div>
+  </div>
+</section>
+
+
+</div>
+</div>
+
+
+
+
+<div class="container-fluid px-0 py-4 " style=" opacity: 0.9; background-image: url(img/signature.jpg);  background-size: 100%; background-position: fixed; background-repeat: no-repeat; overflow: hidden;">
+  <div class="row text-white d-flex align-items-center px-5" style="padding: 10%;" data-aos="fade-right" data-aos-once="true">
+    <div class="col-md-6 row-cols-1 py-4 px-4 mx-4"> <h5 class="">MESSAGE FROM FOUNDER </h5>
+    <h2 class="display-5 mt-4">First, we eat. Then, we do everything else.</h2>
+   
+  
+  </div>
+    
+    
+
+  </div>
+  
+  
+
+</div>
+
+
+
+
+ 
+<!-- Submit - End -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+        offset: 200,
+        duration: 1000,
+      });
+
+      var typed = new Typed('#element', {
+  strings: ['Baked','Boiled','Fried','Steamed'],
+  typeSpeed: 50,
+});
+
+
+</script>

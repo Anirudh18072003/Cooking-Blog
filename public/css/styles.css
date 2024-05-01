@@ -1,0 +1,122 @@
+:root {
+  --bs-font-sans-serif: "poppins", sans-serif;
+}
+
+.container-xxl {
+  max-width: 1450px;
+}
+.nav-link:hover {
+  color: rgb(255, 60, 0);
+}
+
+.color2{
+  color:white;
+}
+.color2:hover{
+  color: orange;
+}
+
+.color3{
+  color:black;
+}
+.color3:hover{
+  color: orange;
+}
+
+
+
+
+
+body {
+  background-color: rgb(251, 246, 237);
+}
+
+a {
+  color: var(--bs-dark);
+}
+
+.orange {
+  color: rgb(255, 60, 0);
+}
+#textContainer {
+  text-align: center; /* Center the text */
+  overflow: hidden; /* Hide overflowing text */
+}
+
+#changingText {
+  display: inline-block; /* Display text as inline block */
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: slideText 5s linear infinite; /* Slide animation with a duration of 5 seconds */
+}
+.btn1 {
+  border: solid 1px rgb(255, 60, 0);
+  color: rgb(255, 60, 0);
+  transition: 0.2s;
+}
+
+.btn2 {
+  color: white;
+  background-color: rgb(255, 60, 0);
+}
+
+.btn2:hover:hover {
+  color: rgb(255, 60, 0);
+  background-color: white;
+}
+
+.btn1:hover {
+  color: white;
+  background-color: rgb(255, 60, 0);
+}
+
+
+
+.signature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#bgimage {
+  background-image: url("/img/bgimage.jpeg"); /* Replace 'image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  opacity: 1;
+}
+
+.backgorund {
+  background-image: url("img/background.jpg");
+}
+
+/* Category Card */
+.category__link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+
+.category__link:hover {
+  transform: scale(1.1);
+}
+
+.category__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.category__img--large {
+  height: 330px;
+}
+
+.category__img img {
+  width: 100%;
+  object-fit: cover;
+}
